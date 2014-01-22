@@ -10,7 +10,7 @@ A port of [Rack::Honeypot](https://github.com/sunlightlabs/rack-honeypot) to Sta
 
 Wrap your HttpKernelInterface app in an instance of `CHH\Stack\Honeypot` or add it to your middleware stack.
 
-From [Rack::Honeypot](https://github.com/sunlightlabs/rack-honeypot):
+### From [Rack::Honeypot](https://github.com/sunlightlabs/rack-honeypot):
 
 This middleware acts as a spam trap. It inserts, into every outputted `<form>`, a text field that a spambot will really want to fill in, but is actually not used by the app. The field is hidden to humans via CSS, and includes a warning label for screenreading software.
 
