@@ -1,0 +1,26 @@
+{
+    "name": "chh/stack-honeypot",
+    "description": "Sets up a form honeypot for spambots and redirects them to a blank page",
+    "authors": [
+        {
+            "name": "Christoph Hochstrasser",
+            "email": "christoph.hochstrasser@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-0": {
+            "CHH\\Stack\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/http-kernel": "~2.1",
+        "symfony/http-foundation": "~2.1"
+    },
+    "require-dev": {
+        "stack/callable-http-kernel": "~1.0@dev",
+        "symfony/css-selector": "~2.0",
+        "symfony/browser-kit": "~2.0"
+    }
+}
