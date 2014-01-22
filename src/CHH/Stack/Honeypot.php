@@ -51,8 +51,10 @@ class Honeypot implements HttpKernelInterface
         $body = preg_replace('/(<form.*>)+/', <<<HTML
 \$1
 <div class="{$this->className}">
-    <label for="{$this->inputName}">{$this->label}</label>
-    <input type="text" name="{$this->inputName}" value="{$this->inputValue}" />
+    <label>
+        {$this->label}
+        <input type="text" name="{$this->inputName}" value="{$this->inputValue}" />
+    </label>
 </div>
 HTML
         , $body);
