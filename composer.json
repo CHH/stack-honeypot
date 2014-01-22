@@ -7,6 +7,7 @@
             "email": "christoph.hochstrasser@gmail.com"
         }
     ],
+    "keywords": ["stack"],
     "license": "MIT",
     "autoload": {
         "psr-0": {
