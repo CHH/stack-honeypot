@@ -13,15 +13,25 @@ class Honeypot implements HttpKernelInterface
     protected $inputName;
     protected $inputValue;
 
+    protected $defaultOptions = [
+        'class_name' => 'phonetoy',
+        'input_name' => 'email',
+        'input_value' => '',
+        'label' => "Don't fill in this field",
+        'always_enabled' => true
+    ];
+
     function __construct(HttpKernelInterface $app, array $options = [])
     {
         $this->app = $app;
 
-        $this->className = isset($options['class_name']) ? $options['class_name'] : 'phonetoy';
-        $this->inputName = isset($options['input_name']) ? $options['input_name'] : 'email';
-        $this->inputValue = isset($options['input_value']) ? $options['input_value'] : '';
-        $this->label = isset($options['label']) ? $options['label'] : "Don't fill in this field";
-        $this->alwaysEnabled = isset($options['always_enabled']) ? $options['always_enabled'] : true;
+        $options = array_merge($this->defaultOptions, $options);
+
+        $this->className = $options['class_name'];
+        $this->inputName = $options['input_name'];
+        $this->inputValue = $options['input_value'];
+        $this->label = $options['label'];
+        $this->alwaysEnabled = $options['always_enabled'];
     }
 
     function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
@@ -62,7 +72,7 @@ HTML
         $body = preg_replace('/(<head.*>)/', <<<HTML
 \$1
 <style type="text/css">
-.{$this->className} {
+div.{$this->className} {
     display: none;
 }
 </style>
