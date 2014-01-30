@@ -30,10 +30,11 @@ In the `<head>`:
         display:none;
       }
     </style>
-  
+
 Then, for incoming requests, the middleware will check if the text field has been set to an unexpected value. If it has, that means a spambot has altered the field, and the spambot is booted to a dead end blank page.
 
-There are a few options you can pass in:
+There are a few options you can pass to the constructor (or to the Stack
+Builder):
   
   * `class_name` is the class assigned to the parent div of the honeypot. Defaults to "phonetoy", an anagram of honeypot.
   * `label` is the warning label displayed to those with CSS disabled. Defaults to "Don't fill in this field".
